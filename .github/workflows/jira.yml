@@ -1,10 +1,10 @@
 name: Create JIRA ISSUE
 on:
   pull_request:
-    types: [opened, reopened]
+    types: [opened]
 jobs:
   security:
-    if: ${{ github.actor == 'dependabot[bot]' || contains(github.event.pull_request.head.ref, 'snyk-fix-') }}
+    if: ${{ github.actor == 'dependabot[bot]' || github.actor == 'snyk-bot' }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
