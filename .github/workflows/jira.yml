@@ -22,6 +22,8 @@ jobs:
           summary: |
             ${{ github.event.pull_request.title }}
           description: |
+            PR: ${{ github.event.pull_request.html_url }}
+
             ${{ github.event.pull_request.body }}
 
       - name: Log created issue
