@@ -1,7 +1,7 @@
 name: Create JIRA ISSUE
 on:
   pull_request:
-    types: [opened]
+    types: [opened, reopened]
 jobs:
   security:
     if: ${{ github.actor == 'dependabot[bot]' || contains(github.event.pull_request.head.ref, 'snyk-fix-') }}
