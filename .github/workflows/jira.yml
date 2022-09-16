@@ -4,6 +4,7 @@ on:
     types: [opened, synchronize, reopened]
 jobs:
   security:
+    if: ${{ github.actor == 'dependabot[bot]' || github.actor == 'snyk-bot' }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -23,9 +24,8 @@ jobs:
             ${{ github.event.pull_request.title }}
           description: |
             PR: ${{ github.event.pull_request.html_url }}
-            {{ html }}
+
             ${{ github.event.pull_request.body }}
-            {{ html }}
 
       - name: Log created issue
-        run: echo "Issue ${{ steps.create.outputs.issue }} was created ${{ github.actor }}"
+        run: echo "Issue ${{ steps.create.outputs.issue }} was created"
