@@ -4,4 +4,4 @@ jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "🎉 The job was automatically triggered by a ${{ secrets.ARAVIND }} event."
+      - run: echo "🎉 The job was automatically triggered by a ${secrets.ARAVIND//-/_} event."
