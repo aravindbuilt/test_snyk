@@ -5,6 +5,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: |
-            REPO="${{ secrets.ARAVIND }}"
-            DB_NAME="${REPO//-/_}"
+            REPO="${{ secrets.JIRA_BASE_URL }}"
+            DB_NAME="${REPO//\./_}"
             echo $DB_NAME
