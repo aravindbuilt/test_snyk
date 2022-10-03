@@ -4,4 +4,7 @@ jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "🎉 The job was automatically triggered by a ${secrets.ARAVIND//-/_} event."
+      - run: |
+            REPO="${{ secrets.ARAVIND }}"
+            DB_NAME="${REPO//-/_}"
+            echo $DB_NAME
